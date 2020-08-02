@@ -6,6 +6,9 @@ class Counter extends Component {
     counter: 0,
   };
   render() {
+    const list = this.props.carItems.map((res) => {
+      return <li>{res}</li>;
+    });
     return (
       <div>
         {this.props.carItems}
@@ -15,10 +18,9 @@ class Counter extends Component {
         <button onClick={this.props.decrementCounter}>Decrement</button>
         <button onClick={this.props.addItem}>Add Item</button>
         <ul>
-          {/* {this.props.carItems.map((res) => {
-            <li>{res}</li>;
-          })} */}
-          <li>aa</li>
+          {this.props.carItems.map((res) => {
+            return <li>{res}</li>;
+          })}
         </ul>
       </div>
     );

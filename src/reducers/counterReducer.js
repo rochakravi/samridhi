@@ -8,7 +8,7 @@ const counterReducer = (state = initialState, action) => {
     return {
       ...state,
       counter: state.counter + 1,
-      items: state.items.concat(action.item),
+      items: state.items.concat(state.counter),
     };
   }
   if (action.type === "DECREMENT") {
@@ -17,13 +17,7 @@ const counterReducer = (state = initialState, action) => {
       counter: state.counter - 1,
     };
   }
-  if (action.type === "ADD_ITEM") {
-    return {
-      ...state,
-      // items: state.items.concat({ name: "pend", price: 10 }),
-      items: state.items.concat(state.counter),
-    };
-  }
+
   return state;
 };
 

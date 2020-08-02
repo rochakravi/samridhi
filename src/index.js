@@ -6,12 +6,9 @@ import { createStore } from "redux";
 import itemCountReducer from "./reducers/itemCountReducer";
 import counterReducer from "./reducers/counterReducer";
 import reducers from "./reducers";
-const store = createStore(counterReducer);
 import userReducer from "./reducers/userReducer";
 
-const store = createStore(userReducer);
-
-//import counterReducer from "./reducers/counterReducer";
+const store = createStore(counterReducer);
 
 ReactDOM.render(
   <Provider store={store}>
