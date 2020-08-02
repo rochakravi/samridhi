@@ -5,7 +5,9 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import itemCountReducer from "./reducers/itemCountReducer";
 import reducers from "./reducers";
-const store = createStore(itemCountReducer);
+import userReducer from './reducers/userReducer'
+
+const store = createStore(userReducer);
 
 //import counterReducer from "./reducers/counterReducer";
 
