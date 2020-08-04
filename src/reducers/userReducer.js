@@ -1,8 +1,6 @@
-
-
-const userReducer= (state,action)=>{
-    return state
-}
+const iniialState = { isAuth: false };
+const userReducer = (state = iniialState, action) => {
+  return state;
+};
 
 export default userReducer;
-

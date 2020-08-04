@@ -8,7 +8,7 @@ import counterReducer from "./reducers/counterReducer";
 import reducers from "./reducers";
 import userReducer from "./reducers/userReducer";
 
-const store = createStore(counterReducer);
+const store = createStore(userReducer);
 
 ReactDOM.render(
   <Provider store={store}>
