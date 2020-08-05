@@ -11,8 +11,8 @@ const App = () => {
     <div className="ui container grid">
       <div className="ui row">
         <div className="column eight wide">
-          {/* <Counter />        
-          <p>Another component</p>
+          <Counter />
+          {/* <p>Another component</p>
           <Cart />
           <Card />  */}
           <User />
