@@ -1,21 +1,25 @@
+import * as action_types from "./../actions";
+
 const initialState = {
-  counter: 0,
+  counter: 5,
   items: [],
 };
 
 const counterReducer = (state = initialState, action) => {
-  if (action.type === "INCREMENT") {
-    return {
-      ...state,
-      counter: state.counter + 1,
-      items: state.items.concat(state.counter),
-    };
-  }
-  if (action.type === "DECREMENT") {
-    return {
-      ...state,
-      counter: state.counter - 1,
-    };
+  switch (action.type) {
+    case action_types.INCREMENT:
+      return {
+        ...state,
+        counter: state.counter + 1,
+        items: state.items.concat(state.counter),
+      };
+    case action_types.DECREMENT:
+      return {
+        ...state,
+        counter: state.counter - 1,
+      };
+    default:
+      return state;
   }
 
   return state;

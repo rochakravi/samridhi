@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import * as action_types from "../actions";
 
 class Counter extends Component {
   state = {
@@ -29,14 +30,14 @@ class Counter extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    countVal: state.counter,
-    carItems: state.items,
+    countVal: state.creducer.counter,
+    carItems: state.creducer.items,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    incrementCounter: () => dispatch({ type: "INCREMENT" }),
+    incrementCounter: () => dispatch({ type: action_types.INCREMENT }),
     decrementCounter: () => dispatch({ type: "DECREMENT" }),
     addItem: () => dispatch({ type: "ADD_ITEM", val: 2 }),
   };
