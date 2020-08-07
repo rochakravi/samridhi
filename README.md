@@ -137,3 +137,7 @@ git branch 'branch name'
 # branch listing
 
 #checkout
+
+# code from another branch to feature branch # anther brnch => master ## fea branch => sprint1
+
+git pull origin 'another branch'
