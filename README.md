@@ -87,7 +87,7 @@ return state;
 
 export default counterReducer;
 
-import to ndex.js\
+import to index.js\
 
 install react-redux
 import provider
@@ -127,3 +127,13 @@ return state;
 };
 
 <button onClick={this.props.incrementCounter}>increment</button>
+
+## git
+
+#create branch
+
+git branch 'branch name'
+
+# branch listing
+
+#checkout
