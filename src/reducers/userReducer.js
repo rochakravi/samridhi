@@ -1,4 +1,4 @@
-const iniialState = { isAuth: false };
+const iniialState = { isAuth: "false" };
 const userReducer = (state = iniialState, action) => {
   return state;
 };

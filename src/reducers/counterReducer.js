@@ -1,5 +1,5 @@
 const initialState = {
-  counter: 0,
+  counter: 25,
   items: [],
 };
 
@@ -11,12 +11,12 @@ const counterReducer = (state = initialState, action) => {
       items: state.items.concat(state.counter),
     };
   }
-  if (action.type === "DECREMENT") {
-    return {
-      ...state,
-      counter: state.counter - 1,
-    };
-  }
+  // if (action.type === "DECREMENT") {
+  //   return {
+  //     ...state,
+  //     counter: state.counter - 1,
+  //   };
+  // }
 
   return state;
 };

@@ -14,7 +14,7 @@ class Counter extends Component {
         {this.props.carItems}
         <p>counter</p>
         <p>{this.props.countVal}</p>
-        <button onClick={this.props.incrementCounter}>Increment</button>
+        <button onClick={this.props.xyz}>Increment</button>
         <button onClick={this.props.decrementCounter}>Decrement</button>
         <button onClick={this.props.addItem}>Add Item</button>
         <ul>
@@ -36,7 +36,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    incrementCounter: () => dispatch({ type: "INCREMENT" }),
+    xyz: () => dispatch({ type: "INCREMENT" }),
     decrementCounter: () => dispatch({ type: "DECREMENT" }),
     addItem: () => dispatch({ type: "ADD_ITEM", val: 2 }),
   };
