@@ -7,6 +7,8 @@ class User extends Component {
       <div>
         <p>user </p>
         <p>{this.props.authanticated}</p>
+        <button onClick={this.props.login}>Login</button>
+        <button onClick={this.props.logout}>Logout</button>
       </div>
     );
   }
@@ -14,8 +16,19 @@ class User extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    authanticated: state.isAuth,
+    authanticated: state.user.isAuth,
   };
 };
 
-export default connect(mapStateToProps)(User);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    login: () => {
+      dispatch({ type: "LOGIN" });
+    },
+    logout: () => {
+      dispatch({ type: "LOGOUT" });
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(User);

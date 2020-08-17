@@ -1,8 +1,3 @@
-export const selectSong = (song) =>{
-    return{
-        type: 'SONG_SELECTED',
-        paylaod: song
-    }
-}
+export const INCREMENT = "INCREMENT";
 
-//export default selectSong ;
+export const DECREMENT = "DECREMENT";
