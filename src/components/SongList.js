@@ -5,7 +5,7 @@ class SongList extends Component {
   selSong = (ss) => {
     console.log("ss", ss);
     this.props.selectingSong(ss);
-    alert("yes boss");
+    alert("Agape");
   };
   renderList() {
     return this.props.songs.map((song) => {
