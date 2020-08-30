@@ -8,12 +8,31 @@ import Card from "./Card";
 import User from "./User";
 import Test from "./Test";
 import Parent from "./parent";
+import Wishlist from "./wishlist";
 
 const App = () => {
   return (
     <Router>
-      <Link to="/songs">Songs</Link>
-      <Link to="/user">Profile</Link>
+      <Link to="/songs">Songs |</Link>
+      <Link to="/user">Profile |</Link>
+      <Link to="/counter">Counter |</Link>
+      <Link to="/songs">Songs |</Link>
+      <Link to="/wishlist">Wishlist |</Link>
+
+      <Switch>
+        <Route path="/user">
+          <User />
+        </Route>
+        <Route path="/counter">
+          <Counter />
+        </Route>
+        <Route path="/songs">
+          <SongList />
+        </Route>
+        <Route path="/wishlist">
+          <Wishlist />
+        </Route>
+      </Switch>
     </Router>
   );
 };
