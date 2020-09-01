@@ -18,7 +18,6 @@ const App = () => {
       <Link to="/songs">Songs |</Link>
       <Link to="/wishlist">Wishlist |</Link>
       <Link to="/bagitem">BagItem |</Link>
-      <Link to="auth">User</Link>
 
       <Switch>
         <Route path="/user">
@@ -35,9 +34,6 @@ const App = () => {
         </Route>
         <Route path="/bagitem">
           <BagItem />
-        </Route>
-        <Route path="/auth">
-          <User />
         </Route>
       </Switch>
     </Router>

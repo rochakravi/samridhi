@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class SongList extends Component {
-  selSong = (ss, event) => {
+  selSong = (ss) => {
     this.props.selectingSong(ss);
   };
   renderList() {
@@ -12,9 +12,12 @@ class SongList extends Component {
           <div className="right floated content">
             <button
               className="ui button primary"
-              onClick={() => this.selSong(song)}
+              onClick={() => {
+                alert("Item added");
+                return this.selSong(song);
+              }}
             >
-              Select
+              Add to Wishlist
             </button>
           </div>
           <div className="content">{song.title}</div>
@@ -27,9 +30,6 @@ class SongList extends Component {
       <div className="ui divided list">
         {this.renderList()}
         <p>{this.props.item}</p>
-        {this.props.selectedSong.map((item) => {
-          return <p key={item.title}>{item.title}</p>;
-        })}
       </div>
     );
   }
@@ -37,7 +37,6 @@ class SongList extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    songs: state.yz,
     item: state.selectedSongRed.item,
     selectedSong: state.selectedSongRed.selected,
   };
