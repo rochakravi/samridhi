@@ -13,7 +13,6 @@ import Wishlist from "./wishlist";
 const App = () => {
   return (
     <Router>
-      <Link to="/songs">Songs |</Link>
       <Link to="/user">Profile |</Link>
       <Link to="/counter">Counter |</Link>
       <Link to="/songs">Songs |</Link>

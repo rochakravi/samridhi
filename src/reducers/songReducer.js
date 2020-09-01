@@ -1,10 +1,9 @@
 const songsReducer = () => {
   return [
-    { title: "No scrubs", duration: "4:05" },
-    { title: "No scs", duration: "1:05" },
-    { title: "t scrubs", duration: "3:05" },
-    { title: "v scrubs", duration: "2:05" },
-    { title: "New song", duration: "2:05" },
+    { title: "Ganesh", duration: "4:05" },
+    { title: "BHole", duration: "1:05" },
+    { title: "Krishna", duration: "3:05" },
+    { title: "sufi", duration: "2:05" },
   ];
 };
 

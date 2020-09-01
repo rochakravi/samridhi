@@ -22,15 +22,9 @@ class Wishlist extends Component {
   render() {
     return (
       <div className="ui divided list">
-        {this.renderList()}
-        <p>{this.props.item}</p>
-        <p>{this.props.selectedSong}</p>
-        <button
-          className="ui button primary"
-          onClick={this.props.selectingSong}
-        >
-          Select
-        </button>
+        {this.props.selectedSong.map((item) => {
+          return <p key={item.title}>{item.title}</p>;
+        })}
       </div>
     );
   }
@@ -38,8 +32,6 @@ class Wishlist extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    songs: state.sngReducer,
-    item: state.selectedSongRed.item,
     selectedSong: state.selectedSongRed.selected,
   };
 };

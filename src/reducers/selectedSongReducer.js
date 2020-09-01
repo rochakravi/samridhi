@@ -1,6 +1,6 @@
 const initialState = {
   selected: [1, 2],
-  item: 0,
+  item: 99,
 };
 
 const selectedSongReducer = (state = initialState, action) => {

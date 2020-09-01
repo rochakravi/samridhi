@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 class SongList extends Component {
-  selSong = (ss) => {
-    console.log("ss", ss);
+  selSong = (ss, event) => {
+    // console.log("ss", ss);
     this.props.selectingSong(ss);
-    alert("Agape");
+    // alert("Agape");
   };
   renderList() {
     return this.props.songs.map((song) => {
@@ -40,7 +40,7 @@ class SongList extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    songs: state.sngReducer,
+    songs: state.yz,
     item: state.selectedSongRed.item,
     selectedSong: state.selectedSongRed.selected,
   };
@@ -48,7 +48,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    //selectingSong: (song) => dispatch({ type: "SELECTED_SONG", value: 2 }),
+    // selectingSong: (song) => dispatch({ type: "SELECTED_SONG", value: 2 }),
     selectingSong: (song) => dispatch({ type: "SELECTED_SONG", payload: song }),
     // dispatch({ type: "SELECTED_SONG", payload: { title: "Hare Krishna" } }),
   };

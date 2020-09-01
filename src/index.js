@@ -13,7 +13,7 @@ import selectedSongReducer from "./reducers/selectedSongReducer";
 const rootReducer = combineReducers({
   creducer: counterReducer,
   user: userReducer,
-  sngReducer: songsReducer,
+  yz: songsReducer,
   selectedSongRed: selectedSongReducer,
 });
 
