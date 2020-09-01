@@ -8,7 +8,7 @@ class User extends Component {
         {this.props.authanticated ? (
           <h1>Welcome User </h1>
         ) : (
-          <h4>Welcome Guest</h4>
+          <h1>Welcome Guest</h1>
         )}
         {this.props.authanticated ? (
           <button onClick={this.props.logout}>Logout</button>
