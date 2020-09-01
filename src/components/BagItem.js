@@ -9,7 +9,6 @@ class BagItem extends Component {
   render() {
     return (
       <div>
-        <p>aa</p>
         <p>{this.props.cartItemsCount}</p>
         <button onClick={this.props.addItem}>Add Item To Cart</button>
         <button onClick={this.props.removeItem}>Remove Item</button>
