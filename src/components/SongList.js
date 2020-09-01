@@ -37,6 +37,7 @@ class SongList extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    songs: state.songred,
     item: state.selectedSongRed.item,
     selectedSong: state.selectedSongRed.selected,
   };
