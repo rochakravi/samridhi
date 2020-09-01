@@ -15,7 +15,7 @@ class Counter extends Component {
         {this.props.carItems}
         <p>counter</p>
         <p>{this.props.countVal}</p>
-        <button onClick={this.props.xyz}>Increment</button>
+        <button onClick={this.props.incrementCounter}>Increment</button>
         <button onClick={this.props.decrementCounter}>Decrement</button>
         <button onClick={this.props.addItem}>Add Item</button>
         <ul>

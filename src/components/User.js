@@ -5,10 +5,16 @@ class User extends Component {
   render() {
     return (
       <div>
-        <p>user </p>
-        <p>{this.props.authanticated}</p>
-        <button onClick={this.props.login}>Login</button>
-        <button onClick={this.props.logout}>Logout</button>
+        {this.props.authanticated ? (
+          <h1>Welcome User </h1>
+        ) : (
+          <h4>Welcome Guest</h4>
+        )}
+        {this.props.authanticated ? (
+          <button onClick={this.props.logout}>Logout</button>
+        ) : (
+          <button onClick={this.props.login}>Login</button>
+        )}
       </div>
     );
   }

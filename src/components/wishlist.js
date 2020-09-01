@@ -1,21 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-class SongList extends Component {
-  selSong = (ss, event) => {
-    // console.log("ss", ss);
-    this.props.selectingSong(ss);
-    // alert("Agape");
-  };
+class Wishlist extends Component {
   renderList() {
-    return this.props.songs.map((song) => {
+    return this.props.selectedSong.map((song) => {
       return (
         <div className="item" key={song.title}>
           <div className="right floated content">
             <button
               className="ui button primary"
-              // onClick={this.props.selectingSong}
-              onClick={() => this.selSong(song)}
+              onClick={this.props.selectingSong}
             >
               Select
             </button>
@@ -28,8 +22,6 @@ class SongList extends Component {
   render() {
     return (
       <div className="ui divided list">
-        {this.renderList()}
-        <p>{this.props.item}</p>
         {this.props.selectedSong.map((item) => {
           return <p key={item.title}>{item.title}</p>;
         })}
@@ -40,8 +32,6 @@ class SongList extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    songs: state.yz,
-    item: state.selectedSongRed.item,
     selectedSong: state.selectedSongRed.selected,
   };
 };
@@ -49,9 +39,12 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     // selectingSong: (song) => dispatch({ type: "SELECTED_SONG", value: 2 }),
-    selectingSong: (song) => dispatch({ type: "SELECTED_SONG", payload: song }),
-    // dispatch({ type: "SELECTED_SONG", payload: { title: "Hare Krishna" } }),
+    selectingSong: (song) =>
+      dispatch({
+        type: "SELECTED_SONG",
+        payload: { title: "Mahadev", duration: "4:05" },
+      }),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SongList);
+export default connect(mapStateToProps, mapDispatchToProps)(Wishlist);
