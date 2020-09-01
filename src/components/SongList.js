@@ -3,9 +3,7 @@ import { connect } from "react-redux";
 
 class SongList extends Component {
   selSong = (ss, event) => {
-    // console.log("ss", ss);
     this.props.selectingSong(ss);
-    // alert("Agape");
   };
   renderList() {
     return this.props.songs.map((song) => {
@@ -14,7 +12,6 @@ class SongList extends Component {
           <div className="right floated content">
             <button
               className="ui button primary"
-              // onClick={this.props.selectingSong}
               onClick={() => this.selSong(song)}
             >
               Select
@@ -48,9 +45,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // selectingSong: (song) => dispatch({ type: "SELECTED_SONG", value: 2 }),
     selectingSong: (song) => dispatch({ type: "SELECTED_SONG", payload: song }),
-    // dispatch({ type: "SELECTED_SONG", payload: { title: "Hare Krishna" } }),
   };
 };
 
