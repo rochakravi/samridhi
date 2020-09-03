@@ -3,18 +3,16 @@ import ReactDOM from "react-dom";
 import App from "./components/App";
 import { Provider } from "react-redux";
 import { createStore, combineReducers } from "redux";
-import itemCountReducer from "./reducers/itemCountReducer";
-import counterReducer from "./reducers/counterReducer";
-// import reducers from "./reducers";
+
 import userReducer from "./reducers/userReducer";
-import songsReducer from "./reducers/songReducer";
-import selectedSongReducer from "./reducers/selectedSongReducer";
+
+import productReducer from "./reducers/productReducer";
+import selectionReducer from "./reducers/selectionReducer";
 
 const rootReducer = combineReducers({
-  creducer: counterReducer,
   user: userReducer,
-  songred: songsReducer,
-  selectedSongRed: selectedSongReducer,
+  product: productReducer,
+  selection: selectionReducer,
 });
 
 const store = createStore(rootReducer);

@@ -1,33 +1,42 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Card from "./Card";
 
 class Wishlist extends Component {
-  // renderList() {
-  //   return <div>
-  //             {this.props.selectedSong.map((song) => {
-  //     return (
-  //       <div className="item" key={song.title}>
-  //         <div className="right floated content">
-  //           <button
-  //             className="ui button primary"
-  //             onClick={this.props.selectingSong}
-  //           >
-  //             Select
-  //           </button>
-  //         </div>
-  //         <div className="content">{song.title}</div>
-  //       </div>}
+  addtoCart = (item) => {
+    alert("item moved");
+    this.props.addTOCART(item);
+  };
 
-  //   </div>
-  //     );
-  //   });
-  // }
+  removefromWishlist = (index) => {
+    alert("hello");
+    this.props.removeFromWishList(index);
+  };
+
   render() {
     return (
       <div className="ui divided list">
-        <h2>Song WishList Item Count: {this.props.selectedSong.length}</h2>
-        {this.props.selectedSong.map((item) => {
-          return <p key={item.title}>{item.title}</p>;
+        <h2>There are {this.props.wishlist.length} items in wishlist</h2>
+        {this.props.wishlist.map((item, index) => {
+          return (
+            <div>
+              <Card item={item}></Card>{" "}
+              <button
+                onClick={() => {
+                  this.addtoCart(item);
+                }}
+              >
+                Add to Cart
+              </button>
+              <button
+                onClick={() => {
+                  this.removefromWishlist(index);
+                }}
+              >
+                Remove from WishList
+              </button>
+            </div>
+          );
         })}
       </div>
     );
@@ -36,18 +45,21 @@ class Wishlist extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    selectedSong: state.selectedSongRed.selected,
+    wishlist: state.selection.wishlist,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     // selectingSong: (song) => dispatch({ type: "SELECTED_SONG", value: 2 }),
-    selectingSong: (song) =>
+    addTOCART: (item) =>
       dispatch({
-        type: "SELECTED_SONG",
-        payload: { title: "Mahadev", duration: "4:05" },
+        type: "ADD_ITEM_TO_CART",
+        payload: item,
       }),
+
+    removeFromWishList: (index) =>
+      dispatch({ type: "REMOVE_ITEM_FROM_WISHLIST", payload: index }),
   };
 };
 

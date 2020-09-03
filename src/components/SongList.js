@@ -5,6 +5,9 @@ class SongList extends Component {
   selSong = (ss) => {
     this.props.selectingSong(ss);
   };
+  addToCart = (ss) => {
+    this.props.cartItems(ss);
+  };
   renderList() {
     return this.props.songs.map((song) => {
       return (
@@ -19,6 +22,15 @@ class SongList extends Component {
             >
               Add to Wishlist
             </button>
+            <button
+              className="ui button primary"
+              onClick={() => {
+                alert("Item added to bagitem");
+                return this.addToCart(song);
+              }}
+            >
+              Add to Cart
+            </button>
           </div>
           <div className="content">{song.title}</div>
         </div>
@@ -29,7 +41,14 @@ class SongList extends Component {
     return (
       <div className="ui divided list">
         {this.renderList()}
-        <p>{this.props.item}</p>
+        <p>
+          {this.props.wishlist.map((item) => {
+            return <li>{item.title}</li>;
+          })}
+          {this.props.cart.map((item) => {
+            return <li>{item.title}</li>;
+          })}
+        </p>
       </div>
     );
   }
@@ -37,15 +56,16 @@ class SongList extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    songs: state.songred,
-    item: state.selectedSongRed.item,
-    selectedSong: state.selectedSongRed.selected,
+    songs: state.product,
+    wishlist: state.selection.wishlist,
+    cart: state.selection.cart,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     selectingSong: (song) => dispatch({ type: "SELECTED_SONG", payload: song }),
+    cartItems: (song) => dispatch({ type: "ADD_TO_CART", payload: song }),
   };
 };
 

@@ -6,9 +6,8 @@ import Counter from "./Counter";
 import Cart from "./Cart";
 import Card from "./Card";
 import User from "./User";
-import Test from "./Test";
-import Parent from "./parent";
 import Wishlist from "./wishlist";
+import CardList from "./cardList";
 
 const App = () => {
   return (
@@ -18,6 +17,7 @@ const App = () => {
       <Link to="/songs">Songs |</Link>
       <Link to="/wishlist">Wishlist |</Link>
       <Link to="/bagitem">BagItem |</Link>
+      <Link to="/allitems"> All items| </Link>
 
       <Switch>
         <Route path="/user">
@@ -34,6 +34,9 @@ const App = () => {
         </Route>
         <Route path="/bagitem">
           <BagItem />
+        </Route>
+        <Route path="/allitems">
+          <CardList />
         </Route>
       </Switch>
     </Router>
