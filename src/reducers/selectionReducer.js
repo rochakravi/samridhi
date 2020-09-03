@@ -23,8 +23,6 @@ const selectionReducer = (state = initialState, action) => {
     };
   }
   if (action.type === "REMOVE_ITEM_FROM_WISHLIST") {
-    alert("hello" + action.payload);
-
     return {
       ...state,
       wishlist: state.wishlist.filter(

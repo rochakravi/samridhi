@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 import Card from "./Card";
 
 class Wishlist extends Component {
-  addtoCart = (item) => {
-    alert("item moved");
+  addtoCart = (item, index) => {
     this.props.addTOCART(item);
+    this.removefromWishlist(index);
+    alert("item moved to cart");
   };
 
   removefromWishlist = (index) => {
-    alert("hello");
     this.props.removeFromWishList(index);
   };
 
@@ -23,7 +23,7 @@ class Wishlist extends Component {
               <Card item={item}></Card>{" "}
               <button
                 onClick={() => {
-                  this.addtoCart(item);
+                  this.addtoCart(item, index);
                 }}
               >
                 Add to Cart
@@ -51,7 +51,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // selectingSong: (song) => dispatch({ type: "SELECTED_SONG", value: 2 }),
     addTOCART: (item) =>
       dispatch({
         type: "ADD_ITEM_TO_CART",

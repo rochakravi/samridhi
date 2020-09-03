@@ -13,21 +13,13 @@ const App = () => {
   return (
     <Router>
       <Link to="/user">Profile |</Link>
-      <Link to="/counter">Counter |</Link>
-      <Link to="/songs">Songs |</Link>
       <Link to="/wishlist">Wishlist |</Link>
       <Link to="/bagitem">BagItem |</Link>
       <Link to="/allitems"> All items| </Link>
 
       <Switch>
         <Route path="/user">
-          <User />
-        </Route>
-        <Route path="/counter">
-          <Counter />
-        </Route>
-        <Route path="/songs">
-          <SongList />
+          <User />{" "}
         </Route>
         <Route path="/wishlist">
           <Wishlist />
