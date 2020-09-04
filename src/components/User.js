@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Card from "./Card";
-import { signInWithGoogle } from './../firebase/firebase.util'
+import { signInWithGoogle } from "./../firebase/firebase.util";
+import { Route, Link } from "react-router-dom";
 
 class User extends Component {
   render() {
@@ -14,10 +15,17 @@ class User extends Component {
         )}
         {this.props.authanticated ? (
           <button onClick={this.props.logout}>Logout</button>
-        ) : (<>
-          <button onClick={this.props.login}>Login</button>
-          <button onClick={ signInWithGoogle}>Login with google</button></>
+        ) : (
+          <>
+            <button onClick={this.props.login}>Login</button>
+            <button onClick={signInWithGoogle}>Login with google</button>
+          </>
         )}
+
+        <button onClick={() => this.props.history.push("/bagitem")}>
+          Go To Cart
+        </button>
+        <Link to="/wishlist">wishlist</Link>
       </div>
     );
   }
