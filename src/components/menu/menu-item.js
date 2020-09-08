@@ -12,3 +12,7 @@ const MenuItem = ({ title, imageUrl }) => {
 };
 
 export default MenuItem;
+
+// //(props)
+
+// {props.title}

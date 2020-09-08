@@ -10,6 +10,7 @@ import CardList from "./cardList";
 import Header from "./header/header";
 import Home from "./screens/home";
 import Shop from "./screens/shop";
+import Contact from "./Contact";
 
 const App = () => {
   return (
@@ -18,6 +19,8 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/shop" component={Shop} />
+        <Route path="/contact" component={Contact} />
+
         <Route path="/bagitem" component={BagItem} />
         <Route path="/user" component={User} />
         <Route path="/allitems">
