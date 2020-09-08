@@ -11,6 +11,7 @@ import Header from "./header/header";
 import Home from "./home/home";
 import Shop from "./shop/shop";
 import Contact from "./Contact";
+import SignIn from "./singin/SignIn";
 
 const App = () => {
   return (
@@ -20,9 +21,10 @@ const App = () => {
         <Route exact path="/" component={Home} />
         <Route path="/shop" component={Shop} />
         <Route path="/contact" component={Contact} />
-
         <Route path="/bagitem" component={BagItem} />
         <Route path="/user" component={User} />
+        <Route path="/sigin" component={SignIn} />
+
         <Route path="/allitems">
           <CardList />
         </Route>

@@ -10,6 +10,20 @@
   background-position: center;
   background-size: cover;
 
+  &:hover {
+    cursor: pointer;
+    & .background-image {
+      transform: scale(1.1);
+      transition: transform 6s cubic-besizer(0.25, 0.45, 0.45, 0.95);
+    }
+    & .content {
+      opacity: 0.9;
+    }
+  }
+  &.large {
+    height: 330px;
+  }
+
   &:first-child {
     margin-right: 7.5px;
   }
