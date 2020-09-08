@@ -8,8 +8,8 @@ import User from "./User";
 import Wishlist from "./wishlist";
 import CardList from "./cardList";
 import Header from "./header/header";
-import Home from "./screens/home";
-import Shop from "./screens/shop";
+import Home from "./home/home";
+import Shop from "./shop/shop";
 import Contact from "./Contact";
 
 const App = () => {
