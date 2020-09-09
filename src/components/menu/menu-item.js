@@ -17,5 +17,5 @@ const MenuItem = ({ title, imageUrl, size }) => {
 export default MenuItem;
 
 // //(props)
-
+// initial
 // {props.title}

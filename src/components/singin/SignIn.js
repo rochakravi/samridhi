@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import Button from "../../ui-kit/button/button";
+import Input from "../../ui-kit/input/input";
+import "./SignIn.styles.scss";
 
 class SignIn extends Component {
   constructor() {
@@ -19,30 +22,33 @@ class SignIn extends Component {
     console.log("password =>", this.state.password);
     alert("hello");
   };
+
   render() {
     return (
       <div className="sing-in">
-        <form>
-          <h1>Title</h1>
-          <form onSubmit={this.handleSubmit}>
-            <input
-              name="email"
-              type="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-              required
-            />
-            <label>Email</label>
-            <input
-              name="password"
-              type="password"
-              value={this.state.password}
-              onChange={this.handleChange}
-              required
-            />
-            <label>Password</label>
-            <input type="submit" value="Submit" />
-          </form>
+        <h1>Title</h1>
+        <form onSubmit={this.handleSubmit} className="form">
+          <input
+            className="input"
+            name="email"
+            type="email"
+            value={this.state.email}
+            onChange={this.handleChange}
+            placeholder="Email"
+            required
+          />
+
+          <input
+            className="input"
+            name="password"
+            type="password"
+            value={this.state.password}
+            onChange={this.handleChange}
+            placeholder="Password"
+            required
+          />
+
+          <Button title="Add To Cart"></Button>
         </form>
       </div>
     );
