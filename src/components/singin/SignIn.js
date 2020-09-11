@@ -4,30 +4,30 @@ import Input from "../../ui-kit/input/input";
 import "./SignIn.styles.scss";
 
 class SignIn extends Component {
-  constructor() {
-    super();
-    this.state = {
-      email: "",
-      password: "",
-    };
-  }
-  handleChange = (event) => {
-    const { value, name } = event.target;
-    this.setState({
-      [name]: value,
-    });
-  };
-  handleSubmit = () => {
-    console.log("email =>", this.state.email);
-    console.log("password =>", this.state.password);
-    alert("hello");
-  };
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     email: "",
+  //     password: "",
+  //   };
+  // }
+  // handleChange = (event) => {
+  //   const { value, name } = event.target;
+  //   this.setState({
+  //     [name]: value,
+  //   });
+  // };
+  // handleSubmit = () => {
+  //   console.log("email =>", this.state.email);
+  //   console.log("password =>", this.state.password);
+  //   alert("hello");
+  // };
 
   render() {
     return (
       <div className="sing-in">
         <h1>Title</h1>
-        <form onSubmit={this.handleSubmit} className="form">
+        {/* <form onSubmit={this.handleSubmit} className="form">
           <input
             className="input"
             name="email"
@@ -49,7 +49,7 @@ class SignIn extends Component {
           />
 
           <Button title="Add To Cart"></Button>
-        </form>
+        </form> */}
       </div>
     );
   }

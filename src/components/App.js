@@ -12,11 +12,13 @@ import Home from "./home/home";
 import Shop from "./shop/shop";
 import Contact from "./Contact";
 import SignIn from "./singin/SignIn";
+import SignUp from "./signup/signup";
 
 const App = () => {
   return (
     <>
       <Header />
+      <SignUp></SignUp>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/shop" component={Shop} />
