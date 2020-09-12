@@ -21,7 +21,7 @@ const Header = ({ title, items }) => {
         <Link className="option" to="/sigin">
           SIGN IN
         </Link>
-        <Link className="option" to="/sigup">
+        <Link className="option" to="/singup">
           SIGN UP
         </Link>
         <Link className="option" to="/cart">
