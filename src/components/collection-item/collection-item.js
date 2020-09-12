@@ -15,6 +15,7 @@ const CollectionItem = ({ id, name, price, imageUrl }) => {
         <FaHeart color="red" size="20px">
           {" "}
         </FaHeart>{" "}
+        <button> Add to Cart</button>
       </div>
 
       <div className="collection-footer">
@@ -22,7 +23,6 @@ const CollectionItem = ({ id, name, price, imageUrl }) => {
 
         <span className="price">{price}</span>
       </div>
-      <button> Add to Cart</button>
     </div>
   );
 };

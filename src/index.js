@@ -8,7 +8,7 @@ import { createStore, combineReducers } from "redux";
 import userReducer from "./reducers/userReducer";
 
 import productReducer from "./reducers/productReducer";
-import selectionReducer from "./reducers/selectionReducer";
+import selectionReducer from "./store/reducers/selectionReducer";
 
 const rootReducer = combineReducers({
   user: userReducer,
@@ -26,6 +26,3 @@ ReactDOM.render(
   </Provider>,
   document.querySelector("#root")
 );
-
-
-
