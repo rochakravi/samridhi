@@ -1,6 +1,7 @@
 import React from "react";
 import "./collection-item.styles.scss";
 import { FaHeart } from "react-icons/fa";
+import Button from "../../ui-kit/button/button";
 
 const CollectionItem = ({ id, name, price, imageUrl }) => {
   return (
@@ -11,11 +12,15 @@ const CollectionItem = ({ id, name, price, imageUrl }) => {
           backgroundImage: `url(${imageUrl})`,
         }}
       >
-        {" "}
-        <FaHeart color="red" size="20px">
+        <div className="wishlist">
           {" "}
-        </FaHeart>{" "}
-        <button> Add to Cart</button>
+          <FaHeart color="red" size="20px">
+            {" "}
+          </FaHeart>{" "}
+        </div>
+        <div>
+          <Button title="Add TO Cart" />
+        </div>
       </div>
 
       <div className="collection-footer">
