@@ -13,12 +13,14 @@ import Shop from "./shop/shop";
 import Contact from "./Contact";
 import SignIn from "./singin/SignIn";
 import SignUp from "./signup/signup";
+import CartItems from "./cart/cartItems";
+import WishList from "./wishlist/wishList";
 
 const App = () => {
   return (
     <>
       <Header />
-      <SignUp></SignUp>
+
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/shop" component={Shop} />
@@ -26,10 +28,12 @@ const App = () => {
         <Route path="/bagitem" component={BagItem} />
         <Route path="/user" component={User} />
         <Route path="/sigin" component={SignIn} />
-
+        <Route path="/signup" component={SignUp}></Route>
         <Route path="/allitems">
           <CardList />
         </Route>
+        <Route path="/cart" component={CartItems}></Route>
+        <Route path="/wishlist" component={WishList}></Route>
       </Switch>
     </>
   );

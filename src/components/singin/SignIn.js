@@ -4,24 +4,24 @@ import Input from "../../ui-kit/input/input";
 import "./SignIn.styles.scss";
 
 class SignIn extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     email: "",
-  //     password: "",
-  //   };
-  // }
-  // handleChange = (event) => {
-  //   const { value, name } = event.target;
-  //   this.setState({
-  //     [name]: value,
-  //   });
-  // };
-  // handleSubmit = () => {
-  //   console.log("email =>", this.state.email);
-  //   console.log("password =>", this.state.password);
-  //   alert("hello");
-  // };
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      password: "",
+    };
+  }
+  handleChange = (event) => {
+    const { value, name } = event.target;
+    this.setState({
+      [name]: value,
+    });
+  };
+  handleSubmit = () => {
+    console.log("email =>", this.state.email);
+    console.log("password =>", this.state.password);
+    alert("hello");
+  };
 
   render() {
     return (
