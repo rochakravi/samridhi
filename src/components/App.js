@@ -1,38 +1,41 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import SongList from "./SongList";
+import "./App.css";
+import { Switch, Route } from "react-router-dom";
+
 import BagItem from "./BagItem";
-import Counter from "./Counter";
-import Cart from "./Cart";
-import Card from "./Card";
+
 import User from "./User";
-import Test from "./Test";
-import Parent from "./parent";
 import Wishlist from "./wishlist";
+import CardList from "./cardList";
+import Header from "./header/header";
+import Home from "./home/home";
+import Shop from "./shop/shop";
+import Contact from "./Contact";
+import SignIn from "./singin/SignIn";
+import SignUp from "./signup/signup";
+import CartItems from "./cart/cartItems";
+import WishList from "./wishlist/wishList";
 
 const App = () => {
   return (
-    <Router>
-      <Link to="/user">Profile |</Link>
-      <Link to="/counter">Counter |</Link>
-      <Link to="/songs">Songs |</Link>
-      <Link to="/wishlist">Wishlist |</Link>
+    <>
+      <Header />
 
       <Switch>
-        <Route path="/user">
-          <User />
+        <Route exact path="/" component={Home} />
+        <Route path="/shop" component={Shop} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/bagitem" component={BagItem} />
+        <Route path="/user" component={User} />
+        <Route path="/sigin" component={SignIn} />
+        <Route path="/signup" component={SignUp}></Route>
+        <Route path="/allitems">
+          <CardList />
         </Route>
-        <Route path="/counter">
-          <Counter />
-        </Route>
-        <Route path="/songs">
-          <SongList />
-        </Route>
-        <Route path="/wishlist">
-          <Wishlist />
-        </Route>
+        <Route path="/cart" component={CartItems}></Route>
+        <Route path="/wishlist" component={WishList}></Route>
       </Switch>
-    </Router>
+    </>
   );
 };
 

@@ -1,27 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 import App from "./components/App";
 import { Provider } from "react-redux";
 import { createStore, combineReducers } from "redux";
-import itemCountReducer from "./reducers/itemCountReducer";
-import counterReducer from "./reducers/counterReducer";
-// import reducers from "./reducers";
+
 import userReducer from "./reducers/userReducer";
-import songsReducer from "./reducers/songReducer";
-import selectedSongReducer from "./reducers/selectedSongReducer";
+
+import productReducer from "./reducers/productReducer";
+import selectionReducer from "./store/reducers/selectionReducer";
 
 const rootReducer = combineReducers({
-  creducer: counterReducer,
   user: userReducer,
-  yz: songsReducer,
-  selectedSongRed: selectedSongReducer,
+  product: productReducer,
+  selection: selectionReducer,
 });
 
 const store = createStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
   document.querySelector("#root")
 );

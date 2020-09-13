@@ -17,6 +17,13 @@ const counterReducer = (state = initialState, action) => {
       return {
         ...state,
         counter: state.counter - 1,
+        items: state.items.concat(state.counter),
+      };
+    case action_types.ADD_ITEM:
+      return {
+        ...state,
+        counter: state.counter + action.val,
+        items: state.items.concat(state.counter),
       };
     default:
       return state;

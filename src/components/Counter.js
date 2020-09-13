@@ -3,17 +3,16 @@ import { connect } from "react-redux";
 import * as action_types from "../actions";
 
 class Counter extends Component {
-  state = {
-    counter: 0,
-  };
   render() {
-    const list = this.props.carItems.map((res) => {
-      return <li>{res}</li>;
-    });
     return (
       <div>
-        {this.props.carItems}
-        <p>counter</p>
+        <h1>Counter </h1>
+        <p>
+          {" "}
+          this counter increment/decrement the value of the counter and push the
+          value in the list displayed :
+        </p>
+
         <p>{this.props.countVal}</p>
         <button onClick={this.props.incrementCounter}>Increment</button>
         <button onClick={this.props.decrementCounter}>Decrement</button>
@@ -38,8 +37,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     incrementCounter: () => dispatch({ type: action_types.INCREMENT }),
-    decrementCounter: () => dispatch({ type: "DECREMENT" }),
-    addItem: () => dispatch({ type: "ADD_ITEM", val: 2 }),
+    decrementCounter: () => dispatch({ type: action_types.DECREMENT }),
+    addItem: () => dispatch({ type: action_types.ADD_ITEM, val: 2 }),
   };
 };
 

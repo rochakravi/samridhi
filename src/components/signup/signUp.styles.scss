@@ -1,0 +1,26 @@
+.input {
+  padding: 6px 20px;
+  border-bottom: 1px solid black !important;
+  border: none;
+  border-radius: 4px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+button {
+  margin: 10px;
+  padding: 10px;
+  font-weight: bold;
+  width: 100px;
+  border-radius: 2px;
+}
+
+button:hover {
+  background-color: grey;
+  color: white;
+  transition: 2ms;
+}
