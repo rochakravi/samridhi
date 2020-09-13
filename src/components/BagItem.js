@@ -1,18 +1,30 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Card from "./Card";
 
 class BagItem extends Component {
-  state = {
-    count: 6,
+  deleteItemfromCart = (index) => {
+    this.props.deleteItemFromCart(index);
   };
-
   render() {
     return (
-      <div>
-        <p>aa</p>
-        <p>{this.props.cartItemsCount}</p>
-        <button onClick={this.props.addItem}>Add Item To Cart</button>
-        <button onClick={this.props.removeItem}>Remove Item</button>
+      <div className="ui divided list">
+        <h2>Cart Item Count: {this.props.selectedItem.length}</h2>
+        {this.props.selectedItem.map((item, index) => {
+          return (
+            <div>
+              <Card item={item}></Card>
+              <button
+                onClick={() => {
+                  this.deleteItemfromCart(index);
+                }}
+              >
+                {" "}
+                Delete Item{" "}
+              </button>
+            </div>
+          );
+        })}
       </div>
     );
   }
@@ -20,14 +32,15 @@ class BagItem extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    cartItemsCount: state.count,
+    selectedItem: state.selection.cart,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addItem: () => dispatch({ type: "ADD_ITEM" }),
-    removeItem: () => dispatch({ type: "REMOVE_ITEM" }),
+    deleteItemFromCart: (index) => {
+      dispatch({ type: "REMOVE_ITEM_FROM_CART", payload: index });
+    },
   };
 };
 

@@ -3,39 +3,31 @@ const createStore = redux.createStore;
 
 const initialState = {
   counter: 0,
+  isAuth: false,
+  items: [],
 };
 
-const rootReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
   if (action.type === "INC_COUNTER") {
     return {
       ...state,
-      counter: state.counter + 1,
+      counter: state.counter + 10,
     };
   }
-  if (action.type === "ADD_COUNTER") {
+  if (action.type === "IS_AUTH") {
     return {
       ...state,
-      counter: state.counter + action.value,
+      isAuth: true,
     };
   }
-
   return state;
 };
 
-//store
-
-const store = createStore(rootReducer);
-console.log(store.getState());
-
-//subscribe
-store.subscribe(() => {
-  console.log("[sub]", store.getState());
-});
+const store = createStore(userReducer);
 
 store.dispatch({ type: "INC_COUNTER" });
-store.dispatch({ type: "ADD_COUNTER", value: 20 });
-store.dispatch({ type: "ADD_COUNTER", value: 20 });
-store.dispatch({ type: "ADD_COUNTER", value: 20 });
-store.dispatch({ type: "ADD_COUNTER", value: 20 });
+store.dispatch({ type: "IS_AUTH" });
+
+console.log("rubin =>", store.getState());
 
 console.log(store.getState());

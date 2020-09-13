@@ -1,42 +1,33 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
   width: 400px;
   text-align: center;
-  h6 {
-    visibility: hidden;
-  }
-  &:hover {
-    h6 {
-      visibility: visible;
-    }
-  }
+  border: solid;
 `;
 const ImageDiv = styled(StyledDiv)`
   color: green;
 `;
 
-const Card = () => {
+const Card = ({ item }) => {
   return (
     <StyledDiv>
-      <ImageDiv>
+      {/* <ImageDiv>
         <img
           style={{ maxWidth: "400px" }}
           src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"
           alt="new"
         />
-      </ImageDiv>
+      </ImageDiv> */}
       <StyledDiv>
-        <h6>Add to Cart</h6>
+        <h3>{item.name} </h3>
+        <h4>{item.desc}</h4>
+        <StyledDiv>
+          <h4>{item.price}</h4>
+        </StyledDiv>
       </StyledDiv>
-      <StyledDiv>
-        <h4>details</h4>
-      </StyledDiv>
-      <StyledDiv>
-        <h4>Price</h4>
-      </StyledDiv>
+      )
     </StyledDiv>
   );
 };
