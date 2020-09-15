@@ -4,7 +4,14 @@ import { FaHeart } from "react-icons/fa";
 import Button from "../../ui-kit/button/button";
 import { connect } from "react-redux";
 
-const CollectionItem = ({ id, name, price, imageUrl, addItemToCart }) => {
+const CollectionItem = ({
+  id,
+  name,
+  price,
+  imageUrl,
+  addItemToCart,
+  addItemToWishList,
+}) => {
   const [item, setItem] = useState({
     name,
     price,
@@ -12,12 +19,11 @@ const CollectionItem = ({ id, name, price, imageUrl, addItemToCart }) => {
   });
 
   const handleClick = () => {
-    console.log(item);
     addItemToCart(item);
   };
-  // const handleWishList = (item) => {
-  //   addItemToWishList(item);
-  // };
+  const handleWishList = () => {
+    addItemToWishList(item);
+  };
   return (
     <div className="collection-item">
       <div
@@ -28,13 +34,12 @@ const CollectionItem = ({ id, name, price, imageUrl, addItemToCart }) => {
       >
         <div className="wishlist">
           {" "}
-          <FaHeart color="red" size="20px">
+          <FaHeart color="red" size="20px" onClick={handleWishList}>
             {" "}
           </FaHeart>{" "}
         </div>
         <div>
           <Button title="Add TO Cart" onclick={handleClick}></Button>
-          {/* <button onClick={handleClick}>Add to Cart</button> */}
         </div>
       </div>
 
@@ -51,6 +56,12 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addItemToCart: (item) => {
       dispatch({ type: "ADD_ITEM_TO_CART", payload: item });
+    },
+    addItemToWishList: (item) => {
+      dispatch({
+        type: "ADD_ITEM_TO_WISHLIST",
+        payload: item,
+      });
     },
   };
 };

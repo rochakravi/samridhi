@@ -4,12 +4,6 @@ const initialState = {
 };
 
 const selectionReducer = (state = initialState, action) => {
-  if (action.type === "SELECTED_SONG") {
-    return {
-      ...state,
-      wishlist: state.wishlist.concat(action.payload),
-    };
-  }
   if (action.type === "ADD_ITEM_TO_WISHLIST") {
     return {
       ...state,
@@ -17,13 +11,13 @@ const selectionReducer = (state = initialState, action) => {
     };
   }
   if (action.type === "ADD_ITEM_TO_CART") {
-    alert("hello u der" + action.payload.name);
     return {
       ...state,
       cart: state.cart.concat(action.payload),
     };
   }
   if (action.type === "REMOVE_ITEM_FROM_WISHLIST") {
+    alert("hello");
     return {
       ...state,
       wishlist: state.wishlist.filter(
