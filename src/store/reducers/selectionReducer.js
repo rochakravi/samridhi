@@ -17,6 +17,7 @@ const selectionReducer = (state = initialState, action) => {
     };
   }
   if (action.type === "ADD_ITEM_TO_CART") {
+    alert("hello u der" + action.payload.name);
     return {
       ...state,
       cart: state.cart.concat(action.payload),
