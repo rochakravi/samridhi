@@ -1,6 +1,9 @@
 import React from "react";
 import CollectionItem from "./../collection-item/collection-item";
 import { connect } from "react-redux";
+import "./cartitem.style.scss";
+import { Link } from "react-router-dom";
+import Button from "./../../ui-kit/button/button";
 
 const CartItems = ({ cartItems, deleteItem }) => {
   const handleDelete = (index) => {
@@ -8,24 +11,32 @@ const CartItems = ({ cartItems, deleteItem }) => {
     deleteItem(index);
   };
   return (
-    <div>
-      <h1>Cart Items</h1>
-      <ul>
+    <div className="cart">
+      <h1> There are {cartItems.length} items in the Cart </h1>
+      <div>
+        {cartItems.length > 0 ? (
+          <Link to="/payment">
+            <button> Proceed to Payment</button>
+          </Link>
+        ) : (
+          <h3> Add Some items in the cart</h3>
+        )}
         {cartItems.map((item, index) => {
           return (
-            <div>
+            <div className="cartitem">
               <CollectionItem
                 name={item.name}
                 price={item.price}
                 imageUrl={item.imageUrl}
               ></CollectionItem>
-              <button onClick={() => handleDelete(index)}>
-                Remove item from cart
-              </button>
+              <Button
+                onclick={() => handleDelete(index)}
+                title=" Remove item from cart"
+              ></Button>
             </div>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 };

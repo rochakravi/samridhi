@@ -15,6 +15,8 @@ import SignIn from "./singin/SignIn";
 import SignUp from "./signup/signup";
 import CartItems from "./cart/cartItems";
 import WishList from "./wishlist/wishList";
+import Payment from "./payment/payment";
+import RouteName from "./RouteName/routeName";
 
 const App = () => {
   return (
@@ -29,11 +31,13 @@ const App = () => {
         <Route path="/user" component={User} />
         <Route path="/sigin" component={SignIn} />
         <Route path="/signup" component={SignUp}></Route>
-        <Route path="/allitems">
+        {/* <Route path="/allitems">
           <CardList />
-        </Route>
+        </Route> */}
         <Route path="/cart" component={CartItems}></Route>
         <Route path="/wishlist" component={WishList}></Route>
+        <Route path="/payment" component={Payment}></Route>
+        <Route exact path="/allitems/:routeName" component={RouteName}></Route>
       </Switch>
     </>
   );
