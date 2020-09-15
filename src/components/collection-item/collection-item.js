@@ -6,18 +6,18 @@ import { connect } from "react-redux";
 
 const CollectionItem = ({ id, name, price, imageUrl, addItemToCart }) => {
   const [item, setItem] = useState({
-    name: name,
-    price: price,
-    imageUrl: imageUrl,
+    name,
+    price,
+    imageUrl,
   });
 
-  const handleClick = (item) => {
-    //  console.log(item);
+  const handleClick = () => {
+    console.log(item);
     addItemToCart(item);
   };
-  const handleWishList = (item) => {
-    addItemToWishList(item);
-  };
+  // const handleWishList = (item) => {
+  //   addItemToWishList(item);
+  // };
   return (
     <div className="collection-item">
       <div
@@ -34,6 +34,7 @@ const CollectionItem = ({ id, name, price, imageUrl, addItemToCart }) => {
         </div>
         <div>
           <Button title="Add TO Cart" onclick={handleClick}></Button>
+          {/* <button onClick={handleClick}>Add to Cart</button> */}
         </div>
       </div>
 
