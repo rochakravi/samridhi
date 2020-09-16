@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import "./payment.styles.scss";
 
 const Payment = ({ cartItems }) => {
-  const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState(10);
 
   //   const manageTotal = () => {
   //     const cartTotal = cartItems.reduce((total, item) => {
@@ -20,6 +20,7 @@ const Payment = ({ cartItems }) => {
           <th>Item</th>
           <th>Price</th>
           {cartItems.map((item) => {
+            setTotal({ total: item.price });
             return (
               <tr>
                 <td>{item.name}</td>

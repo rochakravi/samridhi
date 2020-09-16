@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import CollectionItem from "./../collection-item/collection-item";
 import ListView from "./../listView/ListView";
 
 const WishList = ({ wishListItems, deleteItemFromWishList }) => {
@@ -19,6 +18,7 @@ const WishList = ({ wishListItems, deleteItemFromWishList }) => {
                 name={item.name}
                 imageUrl={item.imageUrl}
                 price={item.price}
+                btnTitle="Add To Cart"
               ></ListView>
               <button
                 onClick={() => {

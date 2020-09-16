@@ -11,6 +11,7 @@ const ListView = ({
   imageUrl,
   addItemToCart,
   addItemToWishList,
+  btnTitle,
 }) => {
   const [item, setItem] = useState({
     name,
@@ -42,7 +43,7 @@ const ListView = ({
       </div>
       <div>
         <button title="Add TO Cart" onclick={handleClick}>
-          Add TO Cart
+          {btnTitle}
         </button>
       </div>
     </div>

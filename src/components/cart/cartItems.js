@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import "./cartitem.style.scss";
 import { Link } from "react-router-dom";
 import Button from "./../../ui-kit/button/button";
+import ListView from "./../listView/ListView";
 
 const CartItems = ({ cartItems, deleteItem }) => {
   const handleDelete = (index) => {
@@ -16,19 +17,23 @@ const CartItems = ({ cartItems, deleteItem }) => {
       <div>
         {cartItems.length > 0 ? (
           <Link to="/payment">
-            <button> Proceed to Payment</button>
+            <button>
+              {" "}
+              Proceed to Payment | <span>5000</span>
+            </button>
           </Link>
         ) : (
           <h3> Add Some items in the cart</h3>
         )}
         {cartItems.map((item, index) => {
           return (
-            <div className="cartitem">
-              <CollectionItem
+            <div>
+              <ListView
                 name={item.name}
                 price={item.price}
                 imageUrl={item.imageUrl}
-              ></CollectionItem>
+                btnTitle="Remove From Cart"
+              ></ListView>
               <Button
                 onclick={() => handleDelete(index)}
                 title=" Remove item from cart"
