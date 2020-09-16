@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import CollectionItem from "./../collection-item/collection-item";
+import ListView from "./../listView/ListView";
 
 const WishList = ({ wishListItems, deleteItemFromWishList }) => {
   const handleDelete = (index) => {
@@ -14,11 +15,11 @@ const WishList = ({ wishListItems, deleteItemFromWishList }) => {
         {wishListItems.map((item, index) => {
           return (
             <div>
-              <CollectionItem
+              <ListView
                 name={item.name}
                 imageUrl={item.imageUrl}
                 price={item.price}
-              ></CollectionItem>
+              ></ListView>
               <button
                 onClick={() => {
                   handleDelete(index);
