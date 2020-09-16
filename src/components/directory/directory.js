@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import MenuItem from "./../menu/menu-item";
 
 class Directory extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       sections: [
         {

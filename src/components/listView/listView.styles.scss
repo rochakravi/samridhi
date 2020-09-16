@@ -1,28 +1,46 @@
 .list-view {
   display: flex;
   flex-direction: row;
-  height: 350px;
+  height: 100px;
   align-items: center;
   justify-content: space-between;
 
   .image {
     width: 22%;
-    height: 40%;
+    height: 90%;
     background-size: cover;
     background-position: center;
     margin-bottom: 5px;
   }
-  .collection-footer {
-    width: 100%;
-    height: 5%;
-    display: flex;
-    justify-content: space-between;
-    font-size: 18px;
+
+  .name {
+    width: 10%;
   }
 
-  .wishlist {
-    position: relative;
-    right: 35%;
-    top: 2%;
+  .price {
+    width: 10%;
   }
+
+  .btn-group {
+    width: 30%;
+    display: flex;
+
+    .btn {
+      width: 50%;
+    }
+  }
+
+  // .collection-footer {
+  //   width: 100%;
+  //   height: 5%;
+  //   display: flex;
+  //   justify-content: space-between;
+  //   font-size: 18px;
+  // }
+
+  // .wishlist {
+  //   position: relative;
+  //   right: 35%;
+  //   top: 2%;
+  // }
 }

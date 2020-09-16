@@ -6,21 +6,22 @@ import { Link } from "react-router-dom";
 import Button from "./../../ui-kit/button/button";
 import ListView from "./../listView/ListView";
 
-const CartItems = ({ cartItems, deleteItem }) => {
+const CartItems = ({ cartItems, deleteItem, addtoWishList }) => {
   const handleDelete = (index) => {
-    alert("item will be deleted " + index);
+    deleteItem(index);
+  };
+
+  const handleaddtoWishList = (item, index) => {
+    addtoWishList(item);
     deleteItem(index);
   };
   return (
     <div className="cart">
       <h1> There are {cartItems.length} items in the Cart </h1>
-      <div>
+      <div style={{ display: "flex", flexDirection: "column" }}>
         {cartItems.length > 0 ? (
           <Link to="/payment">
-            <button>
-              {" "}
-              Proceed to Payment | <span>5000</span>
-            </button>
+            <h3> Proceed to Payment</h3>
           </Link>
         ) : (
           <h3> Add Some items in the cart</h3>
@@ -33,11 +34,10 @@ const CartItems = ({ cartItems, deleteItem }) => {
                 price={item.price}
                 imageUrl={item.imageUrl}
                 btnTitle="Remove From Cart"
+                btnhandleClick={() => handleDelete(index)}
+                secondbtnTitle="Move to Wishlist"
+                secondbtnhandleClick={() => handleaddtoWishList(item, index)}
               ></ListView>
-              <Button
-                onclick={() => handleDelete(index)}
-                title=" Remove item from cart"
-              ></Button>
             </div>
           );
         })}
@@ -54,6 +54,8 @@ const mapDispatchToprops = (dispatch) => {
   return {
     deleteItem: (index) =>
       dispatch({ type: "REMOVE_ITEM_FROM_CART", payload: index }),
+    addtoWishList: (item) =>
+      dispatch({ type: "ADD_ITEM_TO_WISHLIST", payload: item }),
   };
 };
 export default connect(mapStateToProps, mapDispatchToprops)(CartItems);

@@ -17,7 +17,6 @@ const selectionReducer = (state = initialState, action) => {
     };
   }
   if (action.type === "REMOVE_ITEM_FROM_WISHLIST") {
-    alert("hello");
     return {
       ...state,
       wishlist: state.wishlist.filter(
@@ -27,8 +26,6 @@ const selectionReducer = (state = initialState, action) => {
   }
 
   if (action.type === "REMOVE_ITEM_FROM_CART") {
-    alert("hello" + action.payload);
-
     return {
       ...state,
       cart: state.cart.filter((item, index) => index !== action.payload),

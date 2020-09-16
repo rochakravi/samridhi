@@ -12,20 +12,10 @@ const ListView = ({
   addItemToCart,
   addItemToWishList,
   btnTitle,
+  secondbtnTitle,
+  secondbtnhandleClick,
+  btnhandleClick,
 }) => {
-  const [item, setItem] = useState({
-    name,
-    price,
-    imageUrl,
-  });
-
-  const handleClick = () => {
-    addItemToCart(item);
-  };
-  const handleWishList = () => {
-    addItemToWishList(item);
-  };
-
   return (
     <div className="list-view">
       <div
@@ -41,27 +31,20 @@ const ListView = ({
       <div>
         <span className="price">{price}</span>
       </div>
-      <div>
-        <button title="Add TO Cart" onclick={handleClick}>
-          {btnTitle}
-        </button>
+      <div className="btn-group">
+        <span className="btn">
+          {" "}
+          <Button title={btnTitle} onclick={btnhandleClick}></Button>
+        </span>
+        <span className="btn">
+          <Button
+            title={secondbtnTitle}
+            onclick={secondbtnhandleClick}
+          ></Button>
+        </span>
       </div>
     </div>
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addItemToCart: (item) => {
-      dispatch({ type: "ADD_ITEM_TO_CART", payload: item });
-    },
-    addItemToWishList: (item) => {
-      dispatch({
-        type: "ADD_ITEM_TO_WISHLIST",
-        payload: item,
-      });
-    },
-  };
-};
-
-export default connect(null, mapDispatchToProps)(ListView);
+export default connect(null, null)(ListView);
