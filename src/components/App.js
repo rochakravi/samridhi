@@ -33,7 +33,7 @@ const App = () => {
         <Route path="/cart" component={CartItems}></Route>
         <Route path="/wishlist" component={WishList}></Route>
         <Route path="/payment" component={Payment}></Route>
-        <Route exact path="/allitems/:routeName" component={RouteName}></Route>
+        <Route exact path="/:routeName" component={RouteName}></Route>
       </Switch>
     </>
   );
