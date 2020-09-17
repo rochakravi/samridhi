@@ -4,12 +4,6 @@ const initialState = {
 };
 
 const selectionReducer = (state = initialState, action) => {
-  if (action.type === "SELECTED_SONG") {
-    return {
-      ...state,
-      wishlist: state.wishlist.concat(action.payload),
-    };
-  }
   if (action.type === "ADD_ITEM_TO_WISHLIST") {
     return {
       ...state,
@@ -32,8 +26,6 @@ const selectionReducer = (state = initialState, action) => {
   }
 
   if (action.type === "REMOVE_ITEM_FROM_CART") {
-    alert("hello" + action.payload);
-
     return {
       ...state,
       cart: state.cart.filter((item, index) => index !== action.payload),
