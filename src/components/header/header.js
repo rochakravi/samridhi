@@ -5,7 +5,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import "./header.styles.scss";
 
-const Header = ({ title, items }) => {
+const Header = ({ title, items, profile }) => {
   return (
     <div className="header">
       <Link to="/" className="logo-container">
@@ -24,6 +24,11 @@ const Header = ({ title, items }) => {
         <Link className="option" to="/signup">
           SIGN UP
         </Link>
+        {profile ? (
+          <Link className="option" to="/signup">
+            Profile
+          </Link>
+        ) : null}
         <Link className="option" to="/cart">
           {" "}
           <FaShoppingCart />

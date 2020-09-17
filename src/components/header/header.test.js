@@ -1,23 +1,26 @@
 import React from "react";
+import Adapter from "enzyme-adapter-react-16";
+import { shallow, configure } from "enzyme";
 
-import {configure, shallow } from "enzyme";
-import Adaptor from 'enzyme-adapter-react-16;
-
- configure({ adaptor : new Adaptor()});
-
-
-
-
+configure({ adapter: new Adapter() });
 
 import Header from "./header";
+import { Link } from "react-router-dom";
 
 describe("<Header />", () => {
-  it("Should render only one link/ Home Link when user is not autherized", () => {
-
+  it("Header component should be created", () => {
     const wrapper = shallow(<Header />);
 
-    expect(wrapper.find(Link)).toBeTruthy()
+    expect(wrapper).toBeTruthy();
+  });
+  it("Header component should  render 7 Links", () => {
+    const wrapper = shallow(<Header />);
 
+    expect(wrapper.find(Link)).toHaveLength(7);
+  });
+  it("Header component should  render 8 Links when authenticated", () => {
+    const wrapper = shallow(<Header profile />);
 
+    expect(wrapper.find(Link)).toHaveLength(8);
   });
 });

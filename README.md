@@ -19,9 +19,27 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 # yarn add --dev jest
 
+# npm install --save-dev jest babel-jest
+
 # npm install --save-dev jest
 
 # npm install --save enzyme react-test-renderer enzyme-adapter-react-16
+
+###############
+testing scenario
+####################
+
+1. component should be created
+
+2. ensuring length
+
+3. defining types
+
+4. props validation
+
+5. Events
+
+6. Api Response / list
 
 ### `npm run build`
 
