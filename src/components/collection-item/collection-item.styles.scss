@@ -30,6 +30,10 @@
     cursor: pointer;
     opacity: 50%;
   }
+  .item-button {
+    position: relative;
+    top: 75%;
+  }
 }
 
 @media (min-width: 700px) {

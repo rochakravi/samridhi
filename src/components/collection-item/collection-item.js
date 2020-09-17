@@ -38,7 +38,7 @@ const CollectionItem = ({
             {" "}
           </FaHeart>{" "}
         </div>
-        <div>
+        <div className="item-button">
           <Button title="Add TO Cart" onclick={handleClick}></Button>
         </div>
       </div>

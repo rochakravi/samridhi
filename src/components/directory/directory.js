@@ -9,6 +9,7 @@ class Directory extends Component {
       collections: SHOP_DATA,
     };
   }
+
   render() {
     return (
       <div className="directory-menu">
