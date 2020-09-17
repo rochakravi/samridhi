@@ -7,8 +7,8 @@ configure({ adapter: new Adapter() });
 import Directory from "./directory";
 import MenuItem from "./../menu/menu-item";
 
-describe("<Header />", () => {
-  it("Should Render 5 collection preview  titles", () => {
+describe("<Directory />", () => {
+  it("Directory compo Should Render 5 collection preview  titles", () => {
     const wrapper = shallow(<Directory />);
 
     expect(wrapper.find(MenuItem)).toHaveLength(5);

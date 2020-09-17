@@ -23,4 +23,15 @@ describe("<Header />", () => {
 
     expect(wrapper.find(Link)).toHaveLength(8);
   });
+  it("Header component should contain ", () => {
+    const wrapper = shallow(<Header profile />);
+
+    expect(
+      wrapper.contains(
+        <Link className="option" to="/shop">
+          SHOP
+        </Link>
+      )
+    ).toEqual(true);
+  });
 });
