@@ -31,15 +31,17 @@ testing scenario
 
 1. component should be created
 
-2. ensuring length
+2. ensuring length using contains()
 
-3. defining types
+3. ensuring length
 
-4. props validation
+4. defining types
 
-5. Events
+5. props validation
 
-6. Api Response / list
+6. Events
+
+7. Api Response / list
 
 ### `npm run build`
 
