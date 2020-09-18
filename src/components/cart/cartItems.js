@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CollectionItem from "./../collection-item/collection-item";
 import { connect } from "react-redux";
 import "./cartitem.style.scss";
@@ -15,9 +15,15 @@ const CartItems = ({ cartItems, deleteItem, addtoWishList }) => {
     addtoWishList(item);
     deleteItem(index);
   };
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    setTotalPrice(cartItems.reduce((a, b) => a + Math.round(b.price), 0));
+  });
   return (
     <div className="cart">
       <h1> There are {cartItems.length} items in the Cart </h1>
+      <h2> Cart Total Amount is {totalPrice}</h2>
       <div style={{ display: "flex", flexDirection: "column" }}>
         {cartItems.length > 0 ? (
           <Link to="/payment">
