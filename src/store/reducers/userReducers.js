@@ -4,7 +4,7 @@ import LOGOUT from "../action/index";
 const iniialState = {
   isAuth: false,
   name: "name",
-  user: [],
+  users: [],
 };
 const UserReducers = (state = iniialState, action) => {
   switch (action.type) {
@@ -13,7 +13,7 @@ const UserReducers = (state = iniialState, action) => {
         ...state,
         isAuth: true,
         name: "ravi",
-        // user: state.user.concat(action.payload),
+        users: state.users.concat(action.payload),
       };
     case "LOGOUT":
       return {

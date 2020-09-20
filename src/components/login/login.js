@@ -6,6 +6,12 @@ export class login extends Component {
     super();
   }
 
+  login = () => {
+    let item = {
+      name: "achal",
+    };
+    this.props.login(item);
+  };
   test = () => {
     alert("Successfully : " + this.props.user);
     alert("Successfully : " + this.props.name);
@@ -13,20 +19,28 @@ export class login extends Component {
   render() {
     return (
       <div>
-        <input type="button" value="Login" onClick={this.props.login}></input>
+        <input type="button" value="Login" onClick={this.login}></input>
         <input type="button" value="Test" onClick={this.test}></input>
+        {this.props.items.map((item) => {
+          return <p key={item.name}>{item.name}</p>;
+        })}
       </div>
     );
   }
 }
 const mapStateToProps = (state) => {
-  return { user: state.user.isAuth, name: state.user.name };
+  return {
+    user: state.user.isAuth,
+    name: state.user.name,
+    items: state.user.users,
+  };
 };
 const mapDispatchtoProps = (dispatch) => {
   return {
     login: (item) =>
       dispatch({
         type: "LOGIN",
+        payload: item,
       }),
   };
 };
