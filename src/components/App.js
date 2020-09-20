@@ -17,11 +17,12 @@ import CartItems from "./cart/cartItems";
 import WishList from "./wishlist/wishList";
 import Payment from "./payment/payment";
 import RouteName from "./RouteName/routeName";
-
+import Login from '../components/login/login'
 const App = () => {
   return (
     <>
-      <Header />
+      <Login></Login>
+      {/* <Header />
 
       <Switch>
         <Route exact path="/" component={Home} />
@@ -34,7 +35,7 @@ const App = () => {
         <Route path="/wishlist" component={WishList}></Route>
         <Route path="/payment" component={Payment}></Route>
         <Route exact path="/:routeName" component={RouteName}></Route>
-      </Switch>
+      </Switch> */}
     </>
   );
 };
