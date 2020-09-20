@@ -17,6 +17,32 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+# yarn add --dev jest
+
+# npm install --save-dev jest babel-jest
+
+# npm install --save-dev jest
+
+# npm install --save enzyme react-test-renderer enzyme-adapter-react-16
+
+###############
+testing scenario
+####################
+
+1. component should be created
+
+2. ensuring length using contains()
+
+3. ensuring length
+
+4. defining types
+
+5. props validation
+
+6. Events
+
+7. Api Response / list
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.<br />

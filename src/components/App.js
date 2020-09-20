@@ -15,26 +15,27 @@ import SignIn from "./singin/SignIn";
 import SignUp from "./signup/signup";
 import CartItems from "./cart/cartItems";
 import WishList from "./wishlist/wishList";
-
+import Payment from "./payment/payment";
+import RouteName from "./RouteName/routeName";
+import Login from '../components/login/login'
 const App = () => {
   return (
     <>
-      <Header />
+      <Login></Login>
+      {/* <Header />
 
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/shop" component={Shop} />
         <Route path="/contact" component={Contact} />
-        <Route path="/bagitem" component={BagItem} />
         <Route path="/user" component={User} />
         <Route path="/sigin" component={SignIn} />
         <Route path="/signup" component={SignUp}></Route>
-        <Route path="/allitems">
-          <CardList />
-        </Route>
         <Route path="/cart" component={CartItems}></Route>
         <Route path="/wishlist" component={WishList}></Route>
-      </Switch>
+        <Route path="/payment" component={Payment}></Route>
+        <Route exact path="/:routeName" component={RouteName}></Route>
+      </Switch> */}
     </>
   );
 };

@@ -4,16 +4,15 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./components/App";
 import { Provider } from "react-redux";
 import { createStore, combineReducers } from "redux";
-
-import userReducer from "./reducers/userReducer";
-
+//import userReducer from "./reducers/userReducer";
 import productReducer from "./reducers/productReducer";
 import selectionReducer from "./store/reducers/selectionReducer";
+import UserReducers from "./store/reducers/userReducers";
 
 const rootReducer = combineReducers({
-  user: userReducer,
   product: productReducer,
   selection: selectionReducer,
+  user: UserReducers
 });
 
 const store = createStore(rootReducer);
