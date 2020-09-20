@@ -11,6 +11,10 @@ export class login extends Component {
       name: "achal",
     };
     this.props.login(item);
+    setTimeout(() => {
+      alert("Successfully : " + this.props.user);
+      alert("Successfully : " + this.props.name);
+    }, 5000);
   };
   test = () => {
     alert("Successfully : " + this.props.user);
